@@ -13,6 +13,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class StudentFirstActivity extends AppCompatActivity {
 
+    AllBusesInfo allBusesInfo=new AllBusesInfo();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,7 +58,10 @@ public class StudentFirstActivity extends AppCompatActivity {
         Intent intent;
 
         switch (role) {
-            case "red2": intent = new Intent(this, studentredbus2.class); break;
+            case "red2":
+                intent = new Intent(this, studentredbus2.class);
+                break;
+
             case "red3": intent = new Intent(this, studentredbus3.class); break;
             case "red4": intent = new Intent(this, studentredbus4.class); break;
             case "red5": intent = new Intent(this, studentredbus5.class); break;
@@ -71,7 +76,12 @@ public class StudentFirstActivity extends AppCompatActivity {
             case "blue25": intent = new Intent(this, studentbluebus25.class); break;
             case "blue31": intent = new Intent(this, studentbluebus31.class); break;
             case "blue32": intent = new Intent(this, studentbluebus32.class); break;
-            case "blue33": intent = new Intent(this, studentbluebus33.class); break;
+            case "blue33":
+                intent = new Intent(this, BusDetails.class);
+                intent.putExtra("busName", allBusesInfo.bb33_title);
+                intent.putExtra("busImage", allBusesInfo.bb33_image);
+                intent.putExtra("busTimeRoute", allBusesInfo.bb33_time_route);
+                break;
             case "eve1": intent = new Intent(this, studentevebus1.class); break;
             case "eve2": intent = new Intent(this, studentevebus2.class); break;
             case "eve3": intent = new Intent(this, studentevebus3.class); break;
