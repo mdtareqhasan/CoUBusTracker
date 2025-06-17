@@ -5,23 +5,36 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowInsetsController;
-import android.widget.*;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
+
 import com.example.coubustracker.model.BusLocation;
-import com.google.firebase.database.*;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
-public class driverevebus1 extends AppCompatActivity {
-
+public class DriverDetails extends AppCompatActivity {
     private EditText etDriverName, etMobileNumber, etLocationLink;
     private LinearLayout busListLayout;
     private DatabaseReference busesRef;
-
+    private String busName="";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_driverevebus1);
-
+        setContentView(R.layout.activity_driver_details);
+        busName=getIntent().getStringExtra("busName");
         int currentNightMode = getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
 
         if (currentNightMode == Configuration.UI_MODE_NIGHT_NO) {
@@ -50,7 +63,7 @@ public class driverevebus1 extends AppCompatActivity {
 
 
         if (getSupportActionBar() != null) {
-            getSupportActionBar().setTitle("Eve Bus 1");
+            getSupportActionBar().setTitle(busName);
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
 
@@ -82,10 +95,8 @@ public class driverevebus1 extends AppCompatActivity {
         }
 
 
-
-
         BusLocation location = new BusLocation(driverName, mobileNumber, locationLink);
-        busesRef.child("Eve Bus 1").setValue(location)
+        busesRef.child(busName).setValue(location)
                 .addOnSuccessListener(aVoid -> {
                     Toast.makeText(this, "Location Shared", Toast.LENGTH_SHORT).show();
                     etDriverName.setText("");
@@ -99,7 +110,6 @@ public class driverevebus1 extends AppCompatActivity {
         int startIndex = input.indexOf("https");
         return (startIndex != -1) ? input.substring(startIndex).trim() : "";
     }
-
 
 
 
@@ -121,18 +131,18 @@ public class driverevebus1 extends AppCompatActivity {
                         text1.setText("Driver: " + location.getDriverName());
                         text2.setText("Mobile: " + location.getMobileNumber() + "\nLocation: " + location.getLocationLink());
 
-                        int blackColor = ContextCompat.getColor(driverevebus1.this, android.R.color.black);
+                        int blackColor = ContextCompat.getColor(DriverDetails.this, android.R.color.black);
                         text1.setTextSize(18);
                         text2.setTextSize(16);
                         text1.setTextColor(blackColor);
                         text2.setTextColor(blackColor);
 
-                        Button deleteButton = new Button(driverevebus1.this);
+                        Button deleteButton = new Button(DriverDetails.this);
                         deleteButton.setText("Delete");
                         deleteButton.setTextSize(14);
                         deleteButton.setAllCaps(false);
-                        deleteButton.setTextColor(ContextCompat.getColor(driverevebus1.this, android.R.color.white));
-                        deleteButton.setBackgroundColor(ContextCompat.getColor(driverevebus1.this, android.R.color.holo_red_dark));
+                        deleteButton.setTextColor(ContextCompat.getColor(DriverDetails.this, android.R.color.white));
+                        deleteButton.setBackgroundColor(ContextCompat.getColor(DriverDetails.this, android.R.color.holo_red_dark));
 
                         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
                                 LinearLayout.LayoutParams.MATCH_PARENT,
@@ -143,7 +153,7 @@ public class driverevebus1 extends AppCompatActivity {
                         deleteButton.setPadding(30, 20, 30, 20);
                         deleteButton.setOnClickListener(v -> deleteBus(key));
 
-                        LinearLayout container = new LinearLayout(driverevebus1.this);
+                        LinearLayout container = new LinearLayout(DriverDetails.this);
                         container.setOrientation(LinearLayout.VERTICAL);
                         container.setPadding(0, 20, 0, 20);
                         container.addView(itemView);
@@ -156,7 +166,7 @@ public class driverevebus1 extends AppCompatActivity {
 
             @Override
             public void onCancelled(DatabaseError error) {
-                Toast.makeText(driverevebus1.this, "Failed to load buses", Toast.LENGTH_SHORT).show();
+                Toast.makeText(DriverDetails.this, "Failed to load buses", Toast.LENGTH_SHORT).show();
             }
         });
     }

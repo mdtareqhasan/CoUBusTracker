@@ -11,7 +11,7 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class DriverFirstActivity extends AppCompatActivity {
-
+    AllBusesInfo allBusesInfo = new AllBusesInfo();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,73 +57,96 @@ public class DriverFirstActivity extends AppCompatActivity {
 
         switch (role) {
             case "red2":
-                intent = new Intent(DriverFirstActivity.this, driverredbus2.class);
+                intent = new Intent(DriverFirstActivity.this, DriverDetails.class);
+                intent.putExtra("busName", allBusesInfo.rb2_title);
                 break;
             case "red3":
-                intent = new Intent(DriverFirstActivity.this, driverredbus3.class);
+                intent = new Intent(DriverFirstActivity.this, DriverDetails.class);
+                intent.putExtra("busName", allBusesInfo.rb3_title);
                 break;
             case "red4":
-                intent = new Intent(DriverFirstActivity.this, driverredbus4.class);
+                intent = new Intent(DriverFirstActivity.this, DriverDetails.class);
+                intent.putExtra("busName", allBusesInfo.rb4_title);
                 break;
             case "red5":
-                intent = new Intent(DriverFirstActivity.this, driverredbus5.class);
+                intent = new Intent(DriverFirstActivity.this, DriverDetails.class);
+                intent.putExtra("busName", allBusesInfo.rb5_title);
                 break;
             case "red6":
-                intent = new Intent(DriverFirstActivity.this, driverredbus6.class);
+                intent = new Intent(DriverFirstActivity.this, DriverDetails.class);
+                intent.putExtra("busName", allBusesInfo.rb6_title);
                 break;
             case "red7":
-                intent = new Intent(DriverFirstActivity.this, driverredbus7.class);
+                intent = new Intent(DriverFirstActivity.this, DriverDetails.class);
+                intent.putExtra("busName", allBusesInfo.rb7_title);
                 break;
             case "red8":
-                intent = new Intent(DriverFirstActivity.this, driverredbus8.class);
+                intent = new Intent(DriverFirstActivity.this, DriverDetails.class);
+                intent.putExtra("busName", allBusesInfo.rb8_title);
                 break;
             case "red10":
-                intent = new Intent(DriverFirstActivity.this, driverredbus10.class);
+                intent = new Intent(DriverFirstActivity.this, DriverDetails.class);
+                intent.putExtra("busName", allBusesInfo.rb10_title);
                 break;
             case "blue3":
-                intent = new Intent(DriverFirstActivity.this, driverbluebus3.class);
+                intent = new Intent(DriverFirstActivity.this, DriverDetails.class);
+                intent.putExtra("busName", allBusesInfo.bb03_title);
                 break;
             case "blue4":
-                intent = new Intent(DriverFirstActivity.this, driverbluebus4.class);
+                intent = new Intent(DriverFirstActivity.this, DriverDetails.class);
+                intent.putExtra("busName", allBusesInfo.bb04_title);
                 break;
             case "blue5":
-                intent = new Intent(DriverFirstActivity.this, driverbluebus5.class);
+                intent = new Intent(DriverFirstActivity.this, DriverDetails.class);
+                intent.putExtra("busName", allBusesInfo.bb05_title);
                 break;
             case "blue11":
-                intent = new Intent(DriverFirstActivity.this, driverbluebus11.class);
+                intent = new Intent(DriverFirstActivity.this, DriverDetails.class);
+                intent.putExtra("busName", allBusesInfo.bb11_title);
                 break;
             case "blue25":
-                intent = new Intent(DriverFirstActivity.this, driverbluebus25.class);
+                intent = new Intent(DriverFirstActivity.this, DriverDetails.class);
+                intent.putExtra("busName", allBusesInfo.bb25_title);
                 break;
             case "blue31":
-                intent = new Intent(DriverFirstActivity.this, driverbluebus31.class);
+                intent = new Intent(DriverFirstActivity.this, DriverDetails.class);
+                intent.putExtra("busName", allBusesInfo.bb31_title);
                 break;
             case "blue32":
-                intent = new Intent(DriverFirstActivity.this, driverbluebus32.class);
+                intent = new Intent(DriverFirstActivity.this, DriverDetails.class);
+                intent.putExtra("busName", allBusesInfo.bb32_title);
                 break;
             case "blue33":
-                intent = new Intent(DriverFirstActivity.this, driverbluebus33.class);
+                intent = new Intent(DriverFirstActivity.this, DriverDetails.class);
+                intent.putExtra("busName", allBusesInfo.bb33_title);
                 break;
             case "eve1":
-                intent = new Intent(DriverFirstActivity.this, driverevebus1.class);
+                intent = new Intent(DriverFirstActivity.this, DriverDetails.class);
+                intent.putExtra("busName", allBusesInfo.eb1_title);
                 break;
             case "eve2":
-                intent = new Intent(DriverFirstActivity.this, driverevebus2.class);
+                intent = new Intent(DriverFirstActivity.this, DriverDetails.class);
+                intent.putExtra("busName", allBusesInfo.eb2_title);
                 break;
             case "eve3":
-                intent = new Intent(DriverFirstActivity.this, driverevebus3.class);
+                intent = new Intent(DriverFirstActivity.this, DriverDetails.class);
+                intent.putExtra("busName", allBusesInfo.eb3_title);
                 break;
             case "eve4":
-                intent = new Intent(DriverFirstActivity.this, driverevebus4.class);
+                intent = new Intent(DriverFirstActivity.this, DriverDetails.class);
+                intent.putExtra("busName", allBusesInfo.eb4_title);
                 break;
             case "eve5":
-                intent = new Intent(DriverFirstActivity.this, driverevebus5.class);
+                intent = new Intent(DriverFirstActivity.this, DriverDetails.class);
+                intent.putExtra("busName", allBusesInfo.eb5_title);
                 break;
             case "eve6":
-                intent = new Intent(DriverFirstActivity.this, driverevebus6.class);
+                intent = new Intent(DriverFirstActivity.this, DriverDetails.class);
+                intent.putExtra("busName", allBusesInfo.eb6_title);
                 break;
             case "eve7":
-                intent = new Intent(DriverFirstActivity.this, driverevebus7.class);
+                intent = new Intent(DriverFirstActivity.this, DriverDetails.class);
+                intent.putExtra("busName", allBusesInfo.eb7_title);
                 break;
             case "busscedule":
                 intent = new Intent(DriverFirstActivity.this, busscedule.class);

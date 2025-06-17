@@ -43,36 +43,7 @@
 
         <!-- Developer Info -->
 
-        <ImageView
-            android:layout_width="160dp"
-            android:layout_height="150dp"
-            android:src="@drawable/atik_sir"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="4dp"
-            android:contentDescription="Developer 1" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=" Md. Atikur Rahman"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:textColor="@android:color/black" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=" Advisor"
-            android:textColor="@android:color/darker_gray"
-            android:textSize="14sp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:text=" Lecturer, Dept. of CSE, Comilla University"
-            android:textColor="@android:color/darker_gray"
-            android:textSize="14sp" />
         <ImageView
             android:layout_width="160dp"
             android:layout_height="150dp"
@@ -135,14 +106,46 @@
             android:textColor="@android:color/darker_gray"
             android:textSize="14sp" />
 
+
+
+        <ImageView
+            android:layout_width="160dp"
+            android:layout_height="150dp"
+            android:src="@drawable/atik_sir"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="4dp"
+            android:contentDescription="Developer 1" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" Md. Atikur Rahman"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" Advisor"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:text=" Lecturer, Dept. of CSE, Comilla University"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="14sp" />
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="\n\n"
+            android:text="\n\n\n"
             android:importantForAccessibility="no"
             android:focusable="false"
             android:contentDescription="" />
-
 
     </LinearLayout>
 </ScrollView>
