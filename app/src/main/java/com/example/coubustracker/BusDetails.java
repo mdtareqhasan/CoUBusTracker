@@ -92,16 +92,17 @@ public class BusDetails extends AppCompatActivity {
                         if (loc != null) {
                             tvDriverName.setText("Driver Name: " + loc.getDriverName());
                             tvMobileNumber.setText("Mobile Number: " + loc.getMobileNumber());
-                            tvLocationLink.setText("Tap here to open live location");
+                            tvLocationLink.setText("OPEN LIVE LOCATION");
                             locationLink = loc.getLocationLink();
                         } else {
-                            Toast.makeText(BusDetails.this, "Blue Bus 33 not found", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(BusDetails.this, busName + " not found", Toast.LENGTH_SHORT).show();
                         }
                     }
 
                     @Override
                     public void onCancelled(DatabaseError error) {
-                        Toast.makeText(BusDetails.this, "Error loading data", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(BusDetails.this, busName + " not found", Toast.LENGTH_SHORT).show();
+
                     }
                 });
 

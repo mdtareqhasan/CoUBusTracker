@@ -8,13 +8,11 @@
     android:clipToPadding="false"
     android:background="@drawable/bgg21">
 
-
-
     <LinearLayout
         android:id="@+id/infoContainer"
-        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="vertical"
         android:padding="16dp"
         android:layout_marginTop="30dp"
         android:background="@drawable/box_background"
@@ -22,26 +20,28 @@
 
         <TextView
             android:id="@+id/tvBusTimeRoute"
-            android:layout_height="wrap_content"
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:textColor="@color/white"
             android:background="@color/popularblue2"
             android:textAlignment="center"
-            android:textSize="16dp"
+            android:textSize="14sp"
+            android:textStyle="bold"
             android:text="" />
 
         <ImageView
             android:id="@+id/imgBus"
             android:layout_width="match_parent"
             android:layout_height="230dp"
-            android:src="@drawable/bluebus33" />
+            android:scaleType="fitCenter"
+            android:contentDescription="Bus Image" />
 
         <TextView
             android:id="@+id/tvDriverName"
             android:layout_width="match_parent"
-            android:layout_marginTop="30dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
             android:text="Driver Name: "
             android:textSize="20sp"
             android:textColor="#000000"
@@ -66,20 +66,13 @@
             android:textAllCaps="false"
             android:maxLines="1"
             android:ellipsize="end"
-            android:text="Tap here to open live location"
+            android:text="OPEN LIVE LOCATION"
             android:layout_marginTop="16dp" />
 
-        <TextView
+        <View
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="\n"
-            android:importantForAccessibility="no"
-            android:focusable="false"
-            android:paddingBottom="3dp"
-            android:contentDescription="" />
-
+            android:layout_height="16dp" />
 
     </LinearLayout>
-
 
 </ScrollView>

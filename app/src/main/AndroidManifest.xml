@@ -17,6 +17,9 @@
             android:name=".BusDetails"
             android:exported="false" />
         <activity
+            android:name=".driverbusdetails"
+            android:exported="false" />
+        <activity
             android:name=".AboutUsActivity"
             android:exported="false" />
         <activity

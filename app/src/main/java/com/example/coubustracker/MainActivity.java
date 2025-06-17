@@ -90,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
 
         switch (role) {
             case "Student":
-                intent = new Intent(MainActivity.this, StudentLoginActivity.class);
+                intent = new Intent(MainActivity.this, StudentFirstActivity.class);
                 break;
 
             case "Driver":
