@@ -14,6 +14,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CoUBusTracker4">
         <activity
+            android:name=".BusScedule2"
+            android:exported="false" />
+        <activity
+            android:name=".TeacherFirstActivity"
+            android:exported="false" />
+        <activity
             android:name=".DriverDetails"
             android:exported="false" />
         <activity
@@ -29,10 +35,7 @@
             android:name=".busscedule"
             android:exported="false" />
 
-
-
         <receiver android:name=".AutoDeleteReceiver" />
-
 
         <activity
             android:name=".StudentFirstActivity"

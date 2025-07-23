@@ -66,6 +66,10 @@ public class AllBusesInfo {
     public String bb33_time_route= "TIME:\n\n8:15 AM - 9:50 AM - 5:10 PM\n\nROUTE:\n\nKANDIRPAR- TOMSOMBRIDGE- DOULOTPUR- KOTBARI- CAMPUS\n";
     public String bb33_image="bluebus33";
 
+    public String sb1_title= "Staff Bus 1";
+    public String sb1_time_route= "TIME:\n\n8:15 AM(UP) - 5:10 PM(DOWN)\n\nROUTE:\n\nKANDIRPAR- TOMSOMBRIDGE- DOULOTPUR- KOTBARI- CAMPUS\n";
+    public String sb1_image="staffbus1";
+
     public String eb1_title= "Evening Bus 1";
     public String eb1_time_route= "TIME: 7:00 PM\n\nROUTE:\n\nCAMPUS- KOTBARI - POLICELINE - EIDGAH\n";
     public String eb1_image="bus25";
@@ -93,5 +97,19 @@ public class AllBusesInfo {
     public String eb7_title= "Evening Bus 7";
     public String eb7_time_route= "TIME: 8:30 PM\n\nROUTE:\n\nEIDGAH- KANDIRPAR- TOMSOMBRIDGE -KOTBARI- CAMPUS\n";
     public String eb7_image="bluebus4f";
+
+    // --------- Teachers' Buses ---------
+    public String teacherBus1_title = "Teacher Bus 1";
+    public String teacherBus1_time_route = "TIME:\n\n8:30 AM(UP) - 02:00 PM(DOWN) \n\nROUTE:\n\nPOLICELINE -KANDIRPAR -TOMSOMBRIDGE - KOTBARI -CAMPUS";
+    public String teacherBus1_image = "teacherbus1";
+
+    public String teacherBus2_title = "Teacher Bus 2";
+    public String teacherBus2_time_route = "TIME:\n\n10:00 AM - 08:35 PM(UP) , 05:05 PM - 08:00 PM(DOWN)\n\nROUTE:\n\nPOLICELINE -KANDIRPAR -TOMSOMBRIDGE - KOTBARI -CAMPUS";
+    public String teacherBus2_image = "teacherbus2";
+
+    // --------- Officers' Buses ---------
+    public String officerBus1_title = "Officer Bus 1";
+    public String officerBus1_time_route = "TIME:\n\n08:30 AM(UP) - 04:10 PM(DOWN)\n\nROUTE:\n\nPOLICELINE -KANDIRPAR -TOMSOMBRIDGE - KOTBARI -CAMPUS";
+    public String officerBus1_image = "teacherbus1";
 
 }

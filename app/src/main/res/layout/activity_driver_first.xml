@@ -180,6 +180,73 @@
                 android:text="Extra1"
                 android:onClick="openLogin"/>
         </GridLayout>
+
+        <Button
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:text="\nTeacher Bus List:\n"
+            android:backgroundTint="@color/stndgreen"
+            android:layout_marginBottom="10dp"
+            android:textColor="@color/white"/>
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            android:columnCount="2">
+
+            <Button
+                android:id="@+id/teacherBus1"
+                style="@style/TeacherBusButton"
+                android:tag="teacher1"
+                android:text="Bus: 1"
+                android:onClick="openLogin"/>
+
+            <Button
+                android:id="@+id/teacherBus2"
+                style="@style/TeacherBusButton"
+                android:tag="teacher2"
+                android:text="Bus: 2"
+                android:onClick="openLogin"/>
+        </GridLayout>
+        <Button
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:text="\nOfficer Bus List\n"
+            android:backgroundTint="@color/darkblue"
+            android:layout_marginBottom="10dp"
+            android:textColor="@color/white"/>
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            android:columnCount="2">
+
+            <Button
+                android:id="@+id/officerBus1"
+                style="@style/BlueBusButton"
+                android:tag="officer1"
+                android:text="Bus: 1"
+                android:onClick="openLogin"/>
+
+            <Button
+                android:id="@+id/officerBus2"
+                style="@style/BlueBusButton"
+                android:text="extra"
+                android:onClick="openLogin"/>
+        </GridLayout>
+
+        <Button
+
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:text="\nStaff bus\n"
+            android:tag="staff1"
+            android:onClick="openLogin"
+            android:backgroundTint="@color/stndgrey"
+            android:layout_marginBottom="10dp"
+            android:textColor="@color/white"/>
         <Button
 
             android:layout_width="200dp"
@@ -250,6 +317,8 @@
 
 
         </GridLayout>
+
+
 
 
         <!-- Bus Schedule Button -->

@@ -2,14 +2,27 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- Background image -->
+    <!-- Background Image -->
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
         android:src="@drawable/blueloginpage3" />
 
-    <!-- Centered buttons -->
+    <!-- Top Right Corner Button (Smaller, Slightly Lower) -->
+    <ImageButton
+        android:id="@+id/driverLoginButton"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_gravity="top|end"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="40dp"
+        android:scaleType="centerInside"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/menu2"
+        android:contentDescription="Driver Login" />
+
+    <!-- Centered Buttons -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -25,13 +38,13 @@
             android:layout_width="190dp"
             android:layout_height="60dp"
             android:minHeight="60dp"
-            android:text="BUS LIST"
+            android:text="Teacher Bus List"
             android:textSize="15sp"
             android:textAllCaps="false"
             android:maxLines="1"
             android:ellipsize="end"
             android:gravity="center"
-            android:tag="Student"
+            android:tag="Teacher"
             android:onClick="openLogin"
             android:backgroundTint="@color/popularblue2"
             android:textColor="@color/white"
@@ -41,13 +54,13 @@
             android:layout_width="190dp"
             android:layout_height="60dp"
             android:minHeight="60dp"
-            android:text="DRIVER LOGIN"
+            android:text="Student Bus List"
             android:textSize="15sp"
             android:textAllCaps="false"
             android:maxLines="1"
             android:ellipsize="end"
             android:gravity="center"
-            android:tag="Driver"
+            android:tag="Student"
             android:onClick="openLogin"
             android:backgroundTint="@color/popularblue2"
             android:textColor="@color/white"

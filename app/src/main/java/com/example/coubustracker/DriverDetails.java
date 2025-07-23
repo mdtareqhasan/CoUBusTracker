@@ -11,12 +11,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import com.example.coubustracker.model.BusLocation;
 import com.google.firebase.database.DataSnapshot;
@@ -29,16 +25,17 @@ public class DriverDetails extends AppCompatActivity {
     private EditText etDriverName, etMobileNumber, etLocationLink;
     private LinearLayout busListLayout;
     private DatabaseReference busesRef;
-    private String busName="";
+    private String busName = "";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_driver_details);
-        busName=getIntent().getStringExtra("busName");
-        int currentNightMode = getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
 
+        busName = getIntent().getStringExtra("busName");
+
+        int currentNightMode = getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
         if (currentNightMode == Configuration.UI_MODE_NIGHT_NO) {
-            // Light mode: set dark icons on white background
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
                 getWindow().getInsetsController().setSystemBarsAppearance(
                         WindowInsetsController.APPEARANCE_LIGHT_STATUS_BARS,
@@ -49,18 +46,16 @@ public class DriverDetails extends AppCompatActivity {
             }
             getWindow().setStatusBarColor(getResources().getColor(android.R.color.white));
         } else {
-            // Dark mode: set light icons on dark background
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
                 getWindow().getInsetsController().setSystemBarsAppearance(
                         0,
                         WindowInsetsController.APPEARANCE_LIGHT_STATUS_BARS
                 );
             } else {
-                getWindow().getDecorView().setSystemUiVisibility(0); // default light icons
+                getWindow().getDecorView().setSystemUiVisibility(0);
             }
             getWindow().setStatusBarColor(getResources().getColor(android.R.color.black));
         }
-
 
         if (getSupportActionBar() != null) {
             getSupportActionBar().setTitle(busName);
@@ -71,6 +66,7 @@ public class DriverDetails extends AppCompatActivity {
         etMobileNumber = findViewById(R.id.etMobileNumber);
         etLocationLink = findViewById(R.id.etLocationLink);
         busListLayout = findViewById(R.id.driverBusListLayout);
+
         busesRef = FirebaseDatabase.getInstance().getReference("buses");
 
         fetchBusList();
@@ -88,14 +84,14 @@ public class DriverDetails extends AppCompatActivity {
         String locationInput = etLocationLink.getText().toString().trim();
         String locationLink = extractValidLink(locationInput);
 
-
         if (driverName.isEmpty() || mobileNumber.isEmpty() || locationLink.isEmpty()) {
             Toast.makeText(this, "Please enter all fields", Toast.LENGTH_SHORT).show();
             return;
         }
 
+        // 👇 Updated to include bus title
+        BusLocation location = new BusLocation(driverName, mobileNumber, locationLink, busName);
 
-        BusLocation location = new BusLocation(driverName, mobileNumber, locationLink);
         busesRef.child(busName).setValue(location)
                 .addOnSuccessListener(aVoid -> {
                     Toast.makeText(this, "Location Shared", Toast.LENGTH_SHORT).show();
@@ -106,12 +102,11 @@ public class DriverDetails extends AppCompatActivity {
                 .addOnFailureListener(e ->
                         Toast.makeText(this, "Failed to share location", Toast.LENGTH_SHORT).show());
     }
+
     private String extractValidLink(String input) {
         int startIndex = input.indexOf("https");
         return (startIndex != -1) ? input.substring(startIndex).trim() : "";
     }
-
-
 
     private void fetchBusList() {
         busesRef.addValueEventListener(new ValueEventListener() {
@@ -128,7 +123,8 @@ public class DriverDetails extends AppCompatActivity {
                         TextView text1 = itemView.findViewById(android.R.id.text1);
                         TextView text2 = itemView.findViewById(android.R.id.text2);
 
-                        text1.setText("Driver: " + location.getDriverName());
+                        // 👇 Set bus title + driver name
+                        text1.setText("Bus: " + key + "\nDriver: " + location.getDriverName());
                         text2.setText("Mobile: " + location.getMobileNumber() + "\nLocation: " + location.getLocationLink());
 
                         int blackColor = ContextCompat.getColor(DriverDetails.this, android.R.color.black);

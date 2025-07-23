@@ -148,6 +148,23 @@ public class DriverFirstActivity extends AppCompatActivity {
                 intent = new Intent(DriverFirstActivity.this, DriverDetails.class);
                 intent.putExtra("busName", allBusesInfo.eb7_title);
                 break;
+            case "teacher1":
+                intent = new Intent(DriverFirstActivity.this, DriverDetails.class);
+                intent.putExtra("busName", allBusesInfo.teacherBus1_title);
+                break;
+            case "teacher2":
+                intent = new Intent(DriverFirstActivity.this, DriverDetails.class);
+                intent.putExtra("busName", allBusesInfo.teacherBus2_title);
+                break;
+            case "officer1":
+                intent = new Intent(DriverFirstActivity.this, DriverDetails.class);
+                intent.putExtra("busName", allBusesInfo.officerBus1_title);
+                break;
+            case "staff1":
+                intent = new Intent(DriverFirstActivity.this, DriverDetails.class);
+                intent.putExtra("busName", allBusesInfo.sb1_title);
+                break;
+
             case "busscedule":
                 intent = new Intent(DriverFirstActivity.this, busscedule.class);
                 break;

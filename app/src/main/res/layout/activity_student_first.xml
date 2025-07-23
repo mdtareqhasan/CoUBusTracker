@@ -172,7 +172,20 @@
                 style="@style/BlueBusButton"
                 android:text="Extra1"
                 android:onClick="openLogin"/>
+
         </GridLayout>
+
+        <Button
+
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:text="\nStaff bus\n"
+            android:tag="staff1"
+            android:onClick="openLogin"
+            android:backgroundTint="@color/stndgrey"
+            android:layout_marginBottom="10dp"
+            android:textColor="@color/white"/>
+
         <Button
 
             android:layout_width="200dp"

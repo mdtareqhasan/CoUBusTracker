@@ -154,6 +154,12 @@ public class StudentFirstActivity extends AppCompatActivity {
                 intent.putExtra("busImage", allBusesInfo.bb33_image);
                 intent.putExtra("busTimeRoute", allBusesInfo.bb33_time_route);
                 break;
+            case "staff1":
+                intent = new Intent(this, BusDetails.class);
+                intent.putExtra("busName", allBusesInfo.sb1_title);
+                intent.putExtra("busImage", allBusesInfo.sb1_image);
+                intent.putExtra("busTimeRoute", allBusesInfo.sb1_time_route);
+                break;
             case "eve1":
                 intent = new Intent(this, BusDetails.class);
                 intent.putExtra("busName", allBusesInfo.eb1_title);

@@ -1,13 +1,12 @@
 package com.example.coubustracker;
 
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowInsetsController;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
@@ -20,16 +19,18 @@ import com.google.firebase.database.ValueEventListener;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final String STUDENT_PREF = "StudentPrefs";
-    private static final String DRIVER_PREF = "DriverPrefs";
-    private static final String KEY_ID = "studentId";
-    private static final String KEY_PASS = "password";
     private static final String CURRENT_APP_VERSION = "1.1";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().hide();
+        }
+
+
         int currentNightMode = getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
         if (currentNightMode == Configuration.UI_MODE_NIGHT_NO) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
@@ -49,10 +50,13 @@ public class MainActivity extends AppCompatActivity {
             }
             getWindow().setStatusBarColor(getResources().getColor(android.R.color.black));
         }
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().hide();
-        }
 
+        // Driver Login Button Click
+        ImageButton driverLoginButton = findViewById(R.id.driverLoginButton);
+        driverLoginButton.setOnClickListener(view -> {
+            Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+            startActivity(intent);
+        });
 
         checkAppVersion();
     }
@@ -78,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
     private void showUpdateDialog() {
         new AlertDialog.Builder(this)
                 .setTitle("Update Required")
-                .setMessage("Please update the app to the latest version to continue.")
+                .setMessage("Please update the app to the latest version to continue from playstore.")
                 .setCancelable(false)
                 .setPositiveButton("Exit", (dialog, which) -> finish())
                 .show();
@@ -92,15 +96,14 @@ public class MainActivity extends AppCompatActivity {
             case "Student":
                 intent = new Intent(MainActivity.this, StudentFirstActivity.class);
                 break;
-
-            case "Driver":
-                intent = new Intent(MainActivity.this, LoginActivity.class);
+            case "Teacher":
+                intent = new Intent(MainActivity.this, TeacherFirstActivity.class);
                 break;
-
             default:
                 return;
         }
 
         startActivity(intent);
     }
+
 }
