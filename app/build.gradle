@@ -1,9 +1,10 @@
-apply plugin: 'com.android.application'
-apply plugin: 'com.google.gms.google-services'
+plugins {
+    id 'com.android.application'
+    id 'com.google.gms.google-services'
+}
 
 android {
     namespace 'com.example.coubustracker'
-
     compileSdkVersion 35
     buildToolsVersion "35.0.0"
 
@@ -42,29 +43,36 @@ android {
 }
 
 dependencies {
-    // Firebase BoM for version alignment
+    // Firebase BoM (Bill of Materials) for consistent Firebase versions
     implementation platform('com.google.firebase:firebase-bom:33.13.0')
 
-    // Firebase libraries
+    // Firebase libraries (Firestore, Auth, Database, Analytics, Messaging)
+    implementation 'com.google.firebase:firebase-firestore'     // Firestore for notices
     implementation 'com.google.firebase:firebase-auth'
     implementation 'com.google.firebase:firebase-database'
-    implementation 'com.google.firebase:firebase-analytics'    // optional
-    implementation 'com.google.firebase:firebase-messaging'    // optional
+    implementation 'com.google.firebase:firebase-analytics'
+    implementation 'com.google.firebase:firebase-messaging'
+    implementation 'com.google.firebase:firebase-messaging:23.1.2'
+    implementation 'com.squareup.okhttp3:okhttp:4.12.0'
 
-    // Google Play Services (maps and location)
-    implementation 'com.google.android.gms:play-services-maps:18.0.2'      // update to latest stable
-    implementation 'com.google.android.gms:play-services-location:21.0.1'  // update to latest stable
 
-    // AndroidX and UI components
-    implementation 'androidx.appcompat:appcompat:1.6.1'                   // latest stable version
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'     // latest stable version
+
+    // Google Play Services Auth, Maps, Location
+    implementation 'com.google.android.gms:play-services-auth:20.7.0'
+    implementation 'com.google.android.gms:play-services-maps:18.0.2'
+    implementation 'com.google.android.gms:play-services-location:21.0.1'
+
+    // AndroidX and UI
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation 'com.google.android.material:material:1.11.0'
-
-    // Networking with Retrofit + Gson converter
+    implementation 'com.google.android.material:material:1.9.0'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    // Retrofit for networking
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
 
-    // Image loading with Glide
+    // Glide for image loading
     implementation 'com.github.bumptech.glide:glide:4.12.0'
     implementation libs.activity
     annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'

@@ -42,13 +42,32 @@
             android:layout_marginBottom="15dp" />
 
         <!-- Developer Info -->
+        <ImageView
+            android:layout_width="170dp"
+            android:layout_height="150dp"
+            android:src="@drawable/deptlogo2"
+            android:layout_marginTop="2dp"
+            android:contentDescription="Department" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Computer Science and Engineering"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="The initiative to make this app has been taken \n                      from the CSE dept."
+            android:textColor="@android:color/darker_gray"
+            android:textSize="14sp" />
 
 
         <ImageView
             android:layout_width="160dp"
             android:layout_height="150dp"
             android:src="@drawable/tareq"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20dp"
             android:layout_marginBottom="4dp"
             android:contentDescription="Developer 1" />
 

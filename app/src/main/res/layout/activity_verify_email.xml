@@ -1,0 +1,37 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@color/offwhite"
+    android:padding="24dp">
+
+    <TextView
+        android:id="@+id/textViewEmailTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter your email to reset password"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="@color/popularblue2"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="20dp" />
+
+    <EditText
+        android:id="@+id/etEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter valid Gmail"
+        android:background="@drawable/box_background"
+        android:textColor="@color/black"
+        android:textColorHint="@color/stndgrey"
+        android:inputType="textEmailAddress"
+        android:padding="16dp"
+        android:layout_marginBottom="16dp" />
+
+    <Button
+        android:id="@+id/btnSendReset"
+        style="@style/BusSceduleButton"
+        android:text="Send Reset Email"
+        android:layout_marginTop="12dp" />
+</LinearLayout>

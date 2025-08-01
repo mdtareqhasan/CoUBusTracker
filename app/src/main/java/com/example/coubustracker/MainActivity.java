@@ -30,7 +30,6 @@ public class MainActivity extends AppCompatActivity {
             getSupportActionBar().hide();
         }
 
-
         int currentNightMode = getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
         if (currentNightMode == Configuration.UI_MODE_NIGHT_NO) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
@@ -57,6 +56,8 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(MainActivity.this, LoginActivity.class);
             startActivity(intent);
         });
+
+        // 🔕 Removed FCM Subscription
 
         checkAppVersion();
     }

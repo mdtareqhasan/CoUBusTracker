@@ -9,6 +9,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowInsetsController;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class TeacherFirstActivity extends AppCompatActivity {
@@ -99,11 +100,14 @@ public class TeacherFirstActivity extends AppCompatActivity {
         return true;
     }
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
 
         if (id == R.id.menu_about_us) {
             startActivity(new Intent(this, AboutUsActivity.class));
+            return true;
+        } else if (id == R.id.menu_notifications) {
+            startActivity(new Intent(this, NoticeListActivity.class));
             return true;
         }
 

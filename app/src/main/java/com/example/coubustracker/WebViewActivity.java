@@ -4,36 +4,28 @@ import android.annotation.SuppressLint;
 import android.content.res.Configuration;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Handler;
 import android.view.View;
 import android.view.WindowInsetsController;
+import android.webkit.CookieManager;
+import android.webkit.JavascriptInterface;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class WebViewActivity extends AppCompatActivity {
 
     private WebView webView;
-    private Handler handler = new Handler();
     private String locationUrl;
-
-    private final Runnable reloadRunnable = new Runnable() {
-        @Override
-        public void run() {
-            if (webView != null) {
-                webView.reload();
-                handler.postDelayed(this, 15000);
-            }
-        }
-    };
 
     @SuppressLint("SetJavaScriptEnabled")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_web_view);
+
         int currentNightMode = getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
         if (currentNightMode == Configuration.UI_MODE_NIGHT_NO) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
@@ -60,23 +52,42 @@ public class WebViewActivity extends AppCompatActivity {
         }
 
         webView = findViewById(R.id.webView);
-        WebSettings settings = webView.getSettings();
-        settings.setJavaScriptEnabled(true);
-        settings.setDomStorageEnabled(true);
+        WebSettings webSettings = webView.getSettings();
+        webSettings.setJavaScriptEnabled(true);
+        webSettings.setDomStorageEnabled(true);
+        webSettings.setDatabaseEnabled(true);
+        webSettings.setCacheMode(WebSettings.LOAD_DEFAULT);
+        webSettings.setAllowFileAccess(true);
+        webSettings.setGeolocationEnabled(true);
+        webSettings.setMediaPlaybackRequiresUserGesture(false);
+        webSettings.setUserAgentString("Mozilla/5.0 (Linux; Android 10; Pixel 4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Mobile Safari/537.36");
+        webSettings.setLoadWithOverviewMode(true);
+        webSettings.setUseWideViewPort(true);
+        webSettings.setSupportZoom(true);
+        webSettings.setBuiltInZoomControls(true);
+        webSettings.setDisplayZoomControls(false);
+        webSettings.setMixedContentMode(WebSettings.MIXED_CONTENT_ALWAYS_ALLOW);
 
+        CookieManager.getInstance().setAcceptThirdPartyCookies(webView, true);
+        webView.addJavascriptInterface(new JsInterface(), "Android");
         webView.setWebViewClient(new WebViewClient());
 
         locationUrl = getIntent().getStringExtra("location_url");
         if (locationUrl != null) {
             webView.loadUrl(locationUrl);
-            handler.postDelayed(reloadRunnable, 15000);
         }
     }
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        handler.removeCallbacks(reloadRunnable); // stop reloads on destroy
+    private class JsInterface {
+        @JavascriptInterface
+        public void showToast(String message) {
+            Toast.makeText(WebViewActivity.this, message, Toast.LENGTH_SHORT).show();
+        }
+
+        @JavascriptInterface
+        public void onTrackingDataReceived(String data) {
+            Toast.makeText(WebViewActivity.this, "Tracking Data: " + data, Toast.LENGTH_LONG).show();
+        }
     }
 
     @Override

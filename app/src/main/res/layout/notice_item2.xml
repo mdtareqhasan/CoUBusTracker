@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="12dp"
+    android:background="@drawable/notice_background"
+    android:layout_marginBottom="12dp">
+
+    <TextView
+        android:id="@+id/noticeItemTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Notice Title"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:id="@+id/noticeItemBody"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Notice body goes here"
+        android:layout_marginTop="4dp"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:id="@+id/noticeItemTime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Posted: 20 Jul 2025 14:30"
+        android:textSize="12sp"
+        android:textColor="@color/hint_gray"
+        android:layout_marginTop="6dp" />
+
+</LinearLayout>
