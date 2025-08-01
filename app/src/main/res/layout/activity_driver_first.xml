@@ -406,7 +406,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Bus Schedule"
-            android:tag="busschedule"
+            android:tag="busscedule"
             android:onClick="openLogin" />
 
         <TextView
