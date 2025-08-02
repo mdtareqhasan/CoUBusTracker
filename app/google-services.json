@@ -1,14 +1,14 @@
 {
   "project_info": {
-    "project_number": "148221373047",
-    "firebase_url": "https://coubustracker-default-rtdb.firebaseio.com",
-    "project_id": "coubustracker",
-    "storage_bucket": "coubustracker.firebasestorage.app"
+    "project_number": "797633737684",
+    "firebase_url": "https://coubustracker-22ea6-default-rtdb.firebaseio.com",
+    "project_id": "coubustracker-22ea6",
+    "storage_bucket": "coubustracker-22ea6.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:148221373047:android:1a25099fef6e922986f472",
+        "mobilesdk_app_id": "1:797633737684:android:3461d030e3136535a05c41",
         "android_client_info": {
           "package_name": "com.example.coubustracker"
         }
@@ -16,7 +16,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyBv3-igXg83cwaE6LjM5b7v2ZZQC6wWfWw"
+          "current_key": "AIzaSyCIFvPcD9MP0iFV5fPUh47c3PzaUlmryhA"
         }
       ],
       "services": {
