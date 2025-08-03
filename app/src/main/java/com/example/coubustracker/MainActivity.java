@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
-        // 🔕 Removed FCM Subscription
+
 
         checkAppVersion();
     }
