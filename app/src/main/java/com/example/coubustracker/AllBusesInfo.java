@@ -43,7 +43,7 @@ public class AllBusesInfo {
     public String bb04_image="bluebus4f";
 
     public String bb05_title= "Blue Bus 05";
-    public String bb05_time_route= "TIME:\n\n8:15 AM - 9:50 AM - 5:00 PM\n\nROUTE:\n\nTOMSOMBRIDGE- KANDIRPAR -  POLICELINE - ALEKHARCHOR - KOTBARI - CAMPUS\n";
+    public String bb05_time_route= "TIME:8:15 AM\n\nROUTE:\n\nKANDIRPAR-POLICELINE-KOTBARI-CAMPUS\n\nTIME: 9:50 AM - 5:00 PM\n\nROUTE:\n\nKANDIRPAR-TOMSOMBRIDGE-KOTBARI-CAMPUS\n";
     public String bb05image="bluebus5";
 
     public String bb11_title= "Blue Bus 11";
@@ -67,7 +67,7 @@ public class AllBusesInfo {
     public String bb33_image="bluebus33";
 
     public String sb1_title= "Staff Bus 1";
-    public String sb1_time_route= "TIME:\n\n8:15 AM(UP) - 5:05 PM(DOWN)\n\nROUTE:\n\nKANDIRPAR- TOMSOMBRIDGE- DOULOTPUR- KOTBARI- CAMPUS\n";
+    public String sb1_time_route= "TIME:\n\n8:15 AM(UP) - 5:05 PM(DOWN)\n\nROUTE:\n\nKANDIRPAR- TOMSOMBRIDGE/POLICELINE- DOULOTPUR- KOTBARI- CAMPUS\n\nN.B: ROUTE CHANGES AFTER 15 DAYS";
     public String sb1_image="staffbus1";
 
     public String eb1_title= "Evening Bus 1";
