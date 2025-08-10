@@ -1,4 +1,4 @@
-package com.example.coubustracker.model;
+package com.cse.coubustracker.model;
 
 public class BusLocation {
     private String driverName;

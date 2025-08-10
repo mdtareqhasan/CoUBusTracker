@@ -29,7 +29,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:797633737684:android:3461d030e3136535a05c41",
         "android_client_info": {
-          "package_name": "com.example.coubustracker"
+          "package_name": "com.cse.coubustracker"
         }
       },
       "oauth_client": [],

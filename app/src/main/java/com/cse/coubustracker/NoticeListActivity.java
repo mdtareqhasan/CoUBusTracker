@@ -14,7 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.coubustracker.model.Notice;
+import com.cse.coubustracker.model.Notice;
 import com.google.firebase.database.*;
 
 import java.util.ArrayList;

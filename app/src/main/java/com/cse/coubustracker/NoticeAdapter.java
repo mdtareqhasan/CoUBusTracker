@@ -9,7 +9,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.coubustracker.model.Notice;
+import com.cse.coubustracker.model.Notice;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
