@@ -10,15 +10,14 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="2000dp"
+        android:layout_height="match_parent"
         android:clipChildren="true"
         android:clipToPadding="true">
 
         <WebView
             android:id="@+id/webView"
             android:layout_width="match_parent"
-            android:layout_height="2000dp"
-            android:translationY="-300dp"
+            android:layout_height="match_parent"
             android:overScrollMode="never"
             android:scrollbars="none" />
     </RelativeLayout>
