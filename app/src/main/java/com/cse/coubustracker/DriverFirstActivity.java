@@ -1,4 +1,5 @@
-package com.example.coubustracker;
+package com.cse.coubustracker;
+
 
 import android.content.Intent;
 import android.content.res.Configuration;

@@ -1,4 +1,5 @@
-package com.example.coubustracker;
+package com.cse.coubustracker;
+
 
 import android.content.Intent;
 import android.content.res.Configuration;
@@ -7,16 +8,11 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowInsetsController;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import com.example.coubustracker.model.BusLocation;
 import com.google.firebase.database.DataSnapshot;

@@ -1,9 +1,10 @@
-package com.example.coubustracker;
+package com.cse.coubustracker;
+
 
 
 import android.content.Intent;
 import android.os.Bundle;
-import androidx.core.graphics.Insets;
+
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 

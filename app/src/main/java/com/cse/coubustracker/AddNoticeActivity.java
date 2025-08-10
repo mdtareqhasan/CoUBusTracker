@@ -1,4 +1,5 @@
-package com.example.coubustracker;
+package com.cse.coubustracker;
+
 
 import android.content.res.Configuration;
 import android.os.Build;
@@ -14,13 +15,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.database.*;
 
-import org.json.JSONObject;
-
-import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.*;
-
-import okhttp3.*;
 
 public class AddNoticeActivity extends AppCompatActivity {
 

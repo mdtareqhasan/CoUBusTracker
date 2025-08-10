@@ -8,6 +8,25 @@
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:797633737684:android:04f4e658a3b5b478a05c41",
+        "android_client_info": {
+          "package_name": "com.cse.coubustracker"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCIFvPcD9MP0iFV5fPUh47c3PzaUlmryhA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:797633737684:android:3461d030e3136535a05c41",
         "android_client_info": {
           "package_name": "com.example.coubustracker"

@@ -1,4 +1,5 @@
-package com.example.coubustracker;
+package com.cse.coubustracker;
+
 
 import android.content.res.Configuration;
 import android.os.Build;
@@ -8,13 +9,17 @@ import android.view.WindowInsetsController;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class AboutUsActivity extends AppCompatActivity {
+public class BusScedule2 extends AppCompatActivity {
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_about_us);
+        setContentView(R.layout.activity_bus_scedule2);
+
         int currentNightMode = getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
+
         if (currentNightMode == Configuration.UI_MODE_NIGHT_NO) {
+            // Light mode: set dark icons on white background
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
                 getWindow().getInsetsController().setSystemBarsAppearance(
                         WindowInsetsController.APPEARANCE_LIGHT_STATUS_BARS,
@@ -25,23 +30,29 @@ public class AboutUsActivity extends AppCompatActivity {
             }
             getWindow().setStatusBarColor(getResources().getColor(android.R.color.white));
         } else {
+            // Dark mode: set light icons on dark background
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-                getWindow().getInsetsController().setSystemBarsAppearance(0, WindowInsetsController.APPEARANCE_LIGHT_STATUS_BARS);
+                getWindow().getInsetsController().setSystemBarsAppearance(
+                        0,
+                        WindowInsetsController.APPEARANCE_LIGHT_STATUS_BARS
+                );
             } else {
-                getWindow().getDecorView().setSystemUiVisibility(0);
+                getWindow().getDecorView().setSystemUiVisibility(0); // default light icons
             }
             getWindow().setStatusBarColor(getResources().getColor(android.R.color.black));
         }
 
+        // Set action bar title and enable back button
         if (getSupportActionBar() != null) {
-            getSupportActionBar().setTitle("About Us");
+            getSupportActionBar().setTitle("Bus Schedule");
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
+
     }
 
     @Override
     public boolean onSupportNavigateUp() {
-        onBackPressed();
+        onBackPressed(); // Go back to previous activity
         return true;
     }
 }
